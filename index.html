@@ -108,6 +108,7 @@
         .timeline {
             position: relative;
             margin: 0 auto;
+            max-width: 100%;
         }
 
         .timeline::after {
@@ -120,6 +121,7 @@
             left: 50%;
             margin-left: -2px;
             border-radius: 2px;
+            display: none;
         }
 
         .memory {
@@ -127,11 +129,13 @@
             width: 100%;
             padding: 20px 0;
             background-color: inherit;
+            margin-bottom: 30px;
         }
 
         .memory-content {
             position: relative;
-            width: 85%;
+            width: 100%;
+            margin: 0 auto;
             padding: 20px;
             background-color: white;
             border-radius: 15px;
@@ -144,12 +148,8 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .left {
-            left: -20%;
-        }
-
-        .right {
-            left: 20%;
+        .left, .right {
+            left: 0;
         }
 
         .memory-content h2 {
@@ -171,6 +171,7 @@
 
         .memory-slider {
             margin-bottom: 15px;
+            max-width: 100%;
         }
         
         .memory-slide {
@@ -179,8 +180,9 @@
         
         .memory-img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
             border-radius: 10px;
         }
         
@@ -215,6 +217,7 @@
             border-radius: 50%;
             z-index: 1;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none;
         }
 
         .right .circle {
@@ -407,10 +410,10 @@
                     <h2>처음 만난 날</h2>
                     <div class="date">2024년 4월</div>
                     <div class="memory-slider slider-1">
-                        <div class="memory-slide"><img src="https://i.ibb.co/7NvBpDnT/Kakao-Talk-20250405-192003376-04.jpg" alt="처음 만난 날 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/nS6PvTr/Kakao-Talk-20250405-192003376-01.jpg" alt="처음 만난 날 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/7NvBpDnT/Kakao-Talk-20250405-192003376-04.jpg" alt="처음 만난 날 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/C5hYnJmG/Kakao-Talk-20250405-192003376.jpg" alt="처음 만난 날 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/j9hmhDrw/Kakao-Talk-20250405-192003376-02.jpg" alt="처음 만난 날 4" class="memory-img"></div>
                     </div>
                     <p>오케스트라보다 더 풍성했던 우리의 하루. 아무런 사이가 아니었던 우리가 하나가 되는 변화는 그 어떤 계절의 변화보다 아름답고 강렬했다.</p>
                 </div>
@@ -422,10 +425,10 @@
                     <h2>첫 오마카세</h2>
                     <div class="date">2024년 5월</div>
                     <div class="memory-slider slider-2">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/gMbpSwSb/Kakao-Talk-20250405-192129622-01.jpg" alt="첫 오마카세 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/hFqbyy1g/Kakao-Talk-20250405-192129622.jpg" alt="첫 오마카세 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/GvWbcGtS/Kakao-Talk-20250405-192129622-02.jpg" alt="첫 오마카세 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/XxB83dCS/Kakao-Talk-20250405-192129622-03.jpg" alt="첫 오마카세 4" class="memory-img"></div>
                     </div>
                     <p>오마카세도 맛있지만, 분식도 너무 맛있는 걸 보니 어떤 음식보다 어떤 사람과 먹는게 중요하구나라는 걸 알게 돼.</p>
                 </div>
@@ -437,10 +440,10 @@
                     <h2>개수작</h2>
                     <div class="date">2024년 5월</div>
                     <div class="memory-slider slider-3">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/9HmN69nN/Kakao-Talk-20250405-192223067.jpg" alt="개수작 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/RG8y3pSw/Kakao-Talk-20250405-192223067-01.jpg" alt="개수작 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Y47h5Y51/Kakao-Talk-20250405-192223067-02.jpg" alt="개수작 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/zTW8Qnpf/Kakao-Talk-20250405-192223067-03.jpg" alt="개수작 4" class="memory-img"></div>
                     </div>
                     <p>자기와 함께 하고 싶어서 편안히 쉴 수 있는 곳에 가자고 수작을 부린 날. 자기와 함께하는 그 공간은 나에게 기쁨이고 행복이고 사랑의 공간.</p>
                 </div>
@@ -452,10 +455,10 @@
                     <h2>재즈 in the bar / 재즈 in the 방</h2>
                     <div class="date">2024년 6월</div>
                     <div class="memory-slider slider-4">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/C3Y117VS/Kakao-Talk-20250405-192448065-02.jpg" alt="재즈 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/21pqZwqg/20250405-223032.png" alt="재즈 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/6C3PJXG/Kakao-Talk-20250405-192448065.jpg" alt="재즈 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Z6BKZqBf/Kakao-Talk-20250405-192448065-01.jpg" alt="재즈 4" class="memory-img"></div>
                     </div>
                     <p>재즈를 좋아하는 너에게 재즈를 선물하고 싶었어. 바에서, 방 안에서, 그리고 나랑도 재즈할래~?</p>
                 </div>
@@ -467,10 +470,10 @@
                     <h2>첫 여행</h2>
                     <div class="date">2024년 6월</div>
                     <div class="memory-slider slider-5">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Wpss609m/Kakao-Talk-20250405-193006764.jpg" alt="첫 여행 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/k226w5J4/Kakao-Talk-20250405-193006764-01.jpg" alt="첫 여행 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/5gVvj8D3/Kakao-Talk-20250405-193006764-02.jpg" alt="첫 여행 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/YBYdCC2S/Kakao-Talk-20250405-193006764-03.jpg" alt="첫 여행 4" class="memory-img"></div>
                     </div>
                     <p>처음부터 끝까지 완벽했던, 행복했던 여행. 그때 먹은 고기와 비빔면, 아침으로 만들어준 행복은 잊을 수 없을거야.</p>
                 </div>
@@ -482,10 +485,10 @@
                     <h2>'사랑스러움' 이라는 단어의 의인화</h2>
                     <div class="date">2024년 7월</div>
                     <div class="memory-slider slider-6">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/FkYTwS2G/Kakao-Talk-20250405-193336020-01.jpg" alt="사랑스러움 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/7d79JyNT/Kakao-Talk-20250405-193336020.jpg" alt="사랑스러움 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/gXR8Hh8/Kakao-Talk-20250405-193336020-02.jpg" alt="사랑스러움 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/TxGXpyTB/Kakao-Talk-20250405-193336020-03.jpg" alt="사랑스러움 4" class="memory-img"></div>
                     </div>
                     <p>쳐다보면 웃기 시작하고, 결국 허리를 숙이며 푸히히 웃어버리는 그녀는 사랑스러움 그 자체</p>
                 </div>
@@ -497,10 +500,10 @@
                     <h2>포항항항~</h2>
                     <div class="date">2024년 8월</div>
                     <div class="memory-slider slider-7">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/wNCgGvhB/Kakao-Talk-20250405-193650912-03.jpg" alt="포항 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Tqg0yVyh/Kakao-Talk-20250405-193650912-02.jpg" alt="포항 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/pBMPSsgR/Kakao-Talk-20250405-193650912.jpg" alt="포항 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/XZPY4XP3/Kakao-Talk-20250405-193650912-01.jpg" alt="포항 4" class="memory-img"></div>
                     </div>
                     <p>아름다운 숙소에서 아름다운 여인과 있는 남자는 참 복 받은겨 그체?</p>
                 </div>
@@ -512,10 +515,10 @@
                     <h2>두려움을 극복한 날</h2>
                     <div class="date">2024년 9월</div>
                     <div class="memory-slider slider-8">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/CszMWsXB/Kakao-Talk-20250405-193903698-01.jpg" alt="두려움 극복 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/GfctfmJ4/Kakao-Talk-20250405-193903698.jpg" alt="두려움 극복 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/chB0jbgc/Kakao-Talk-20250405-193903698-02.jpg" alt="두려움 극복 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/cSV0fS5q/Kakao-Talk-20250405-193903698-03.jpg" alt="두려움 극복 4" class="memory-img"></div>
                     </div>
                     <p>사진이 없어서 아쉽지만, 두려운 순간을 함께 극복했던 소중한 순간. 그네는 360도 돌리러 가야하는데, 다음에 다시 도저언~</p>
                 </div>
@@ -527,10 +530,10 @@
                     <h2>앙큼한 단발</h2>
                     <div class="date">2024년 10월</div>
                     <div class="memory-slider slider-9">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/bMDNp48m/Kakao-Talk-20250405-193936236.jpg" alt="단발 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/5gJ9Ccxt/Kakao-Talk-20250405-193936236-01.jpg" alt="단발 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/KcRC61xw/Kakao-Talk-20250405-193936236-02.jpg" alt="단발 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/bMgw68S8/Kakao-Talk-20250405-193936236-03.jpg" alt="단발 4" class="memory-img"></div>
                     </div>
                     <p>갑자기 단발로 잘라오고, 나를 놀라게 했던 그녀~ 내가 좋아하는 단발이 너무 찰떡이고 이뻤어.</p>
                 </div>
@@ -542,10 +545,10 @@
                     <h2>크리스마스</h2>
                     <div class="date">2024년 12월</div>
                     <div class="memory-slider slider-10">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/JWVtnc3n/Kakao-Talk-20250405-194158104-01.jpg" alt="크리스마스 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/ynqyFGHx/Kakao-Talk-20250405-194158104.jpg" alt="크리스마스 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/dn7V0wv/Kakao-Talk-20250405-194158104-02.jpg" alt="크리스마스 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/j9gpFwnv/Kakao-Talk-20250405-194158104-03.jpg" alt="크리스마스 4" class="memory-img"></div>
                     </div>
                     <p>즐거운 크리스마스. 크리스마스가 즐거운 게 아니라, 자기와 함께여서 즐겁고 기쁘다. 한땀한땀 떠준 목도리는 나의 보물. 행여나 잃어버릴까 차고 다니는게 두려울 정도야.</p>
                 </div>
@@ -557,10 +560,10 @@
                     <h2>함께 맞이하는 새해</h2>
                     <div class="date">2025년 1월</div>
                     <div class="memory-slider slider-11">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Cpn05YPg/Kakao-Talk-20250405-194241373-01.jpg" alt="새해 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/9mSrKGbX/Kakao-Talk-20250405-194241373.jpg" alt="새해 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/JjGRXr9f/Kakao-Talk-20250405-194241373-02.jpg" alt="새해 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/Qv70hFJR/Kakao-Talk-20250405-194241373-03.jpg" alt="새해 4" class="memory-img"></div>
                     </div>
                     <p>만다라트를 같이 짜며, 미래를 준비하는 둘의 모습. 내용이 바뀌어도 상관 없어. 계속 같이 바꿔나가며 앞으로를 기대하자.</p>
                 </div>
@@ -572,10 +575,10 @@
                     <h2>새로운 경험</h2>
                     <div class="date">2025년 2월</div>
                     <div class="memory-slider slider-12">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/v6prMPZL/Kakao-Talk-20250405-194500680-01.jpg" alt="새로운 경험 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/20rcBKrM/Kakao-Talk-20250405-194500680.jpg" alt="새로운 경험 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/yFC6nGbg/Kakao-Talk-20250405-194500680-02.jpg" alt="새로운 경험 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/jk7rzkkD/Kakao-Talk-20250405-194500680-03.jpg" alt="새로운 경험 4" class="memory-img"></div>
                     </div>
                     <p>찜질방 데이트로 떠나는 힐링여행. 아파트에 찍힌 것도 너무 웃기고 재밌었다ㅎㅎㅎㅎ 다음엔 다른 포즈로 찍혀보자~?</p>
                 </div>
@@ -587,34 +590,12 @@
                     <h2>행복은 시간이 아니라 순간이다</h2>
                     <div class="date">2025년 3월</div>
                     <div class="memory-slider slider-13">
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 1" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 2" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 3" class="memory-img"></div>
-                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 4" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/JwT9zhFJ/Kakao-Talk-20250405-200814295.jpg" alt="행복한 순간 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/fzpfMP2B/Kakao-Talk-20250405-200814295-01.jpg" alt="행복한 순간 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/d4qRHyMD/Kakao-Talk-20250405-200814295-02.jpg" alt="행복한 순간 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="https://i.ibb.co/cKMdzb35/Kakao-Talk-20250405-200814295-03.jpg" alt="행복한 순간 4" class="memory-img"></div>
                     </div>
                     <p>자기와의 30분, 1시간, 7시간, 24시간 모든 순간이 행복이야. 시간이 길어서 라기 보단, 그 순간을 함께하는 것이 기쁘고 행복하네.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="special-moments">
-            <h2>특별한 순간들</h2>
-            <div class="moments-grid">
-                <div class="moment">
-                    <img src="/api/placeholder/400/320" alt="데이트">
-                    <div class="caption">즐거운 데이트</div>
-                </div>
-                <div class="moment">
-                    <img src="/api/placeholder/400/320" alt="영화관">
-                    <div class="caption">영화관에서</div>
-                </div>
-                <div class="moment">
-                    <img src="/api/placeholder/400/320" alt="생일">
-                    <div class="caption">당신의 생일</div>
-                </div>
-                <div class="moment">
-                    <img src="/api/placeholder/400/320" alt="카페">
-                    <div class="caption">좋아하는 카페</div>
                 </div>
             </div>
         </div>
