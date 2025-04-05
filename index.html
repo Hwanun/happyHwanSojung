@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리의 1주년 기념일</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #fff8f8;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            height: 30px;
+            position: absolute;
+            width: 30px;
+        }
+
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 15px;
+            top: 0;
+        }
+
+        .heart-1 {
+            top: 20px;
+            left: 20px;
+        }
+
+        .heart-2 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+            50% {
+                transform: rotate(-45deg) scale(1);
+            }
+            100% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #ffafbd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .memory {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            background-color: inherit;
+        }
+
+        .memory-content {
+            position: relative;
+            width: 85%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .memory-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .left {
+            left: -20%;
+        }
+
+        .right {
+            left: 20%;
+        }
+
+        .memory-content h2 {
+            font-size: 1.3rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .memory-content p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .memory-content .date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .memory-slider {
+            margin-bottom: 15px;
+        }
+        
+        .memory-slide {
+            padding: 0 5px;
+        }
+        
+        .memory-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .slick-prev, .slick-next {
+            z-index: 10;
+        }
+        
+        .slick-prev {
+            left: 5px;
+        }
+        
+        .slick-next {
+            right: 5px;
+        }
+        
+        .slick-dots {
+            bottom: -25px;
+        }
+        
+        .slick-dots li button:before {
+            color: #ffafbd;
+        }
+
+        .circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -40px;
+            background-color: white;
+            border: 4px solid #ffafbd;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .right .circle {
+            left: -40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background: linear-gradient(135deg, #ffc3a0, #ffafbd);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .love-letter {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: left;
+        }
+
+        .special-moments {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .special-moments h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .moment {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .moment:hover {
+            transform: scale(1.03);
+        }
+
+        .moment img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .moment .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 8px;
+            font-size: 0.8rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .moment:hover .caption {
+            transform: translateY(0);
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff6b6b' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") no-repeat center center;
+            background-size: contain;
+            animation: floatHeart 10s infinite linear;
+            opacity: 0.5;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .counter {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter h2 {
+            font-size: 1.4rem;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .counter-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .counter p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0;
+        }
+        
+        #seconds-counter {
+            display: inline-block;
+            min-width: 60px;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <div class="container">
+        <header>
+            <div class="heart heart-1"></div>
+            <div class="heart heart-2"></div>
+            <h1>우리의 1주년</h1>
+            <p>함께한 365일의 소중한 순간들</p>
+        </header>
+        
+        <div class="counter">
+            <h2>우리가 함께한 시간</h2>
+            <div class="counter-value" id="days-counter">365</div>
+            <p>일 <span id="hours-counter">8,760</span>시간 <span id="minutes-counter">525,600</span>분 <span id="seconds-counter">31,536,000</span>초</p>
+        </div>
+
+        <div class="timeline">
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>처음 만난 날</h2>
+                    <div class="date">2024년 4월</div>
+                    <div class="memory-slider slider-1">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="처음 만난 날 4" class="memory-img"></div>
+                    </div>
+                    <p>오케스트라보다 더 풍성했던 우리의 하루. 아무런 사이가 아니었던 우리가 하나가 되는 변화는 그 어떤 계절의 변화보다 아름답고 강렬했다.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>첫 오마카세</h2>
+                    <div class="date">2024년 5월</div>
+                    <div class="memory-slider slider-2">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 오마카세 4" class="memory-img"></div>
+                    </div>
+                    <p>오마카세도 맛있지만, 분식도 너무 맛있는 걸 보니 어떤 음식보다 어떤 사람과 먹는게 중요하구나라는 걸 알게 돼.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>개수작</h2>
+                    <div class="date">2024년 5월</div>
+                    <div class="memory-slider slider-3">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="개수작 4" class="memory-img"></div>
+                    </div>
+                    <p>자기와 함께 하고 싶어서 편안히 쉴 수 있는 곳에 가자고 수작을 부린 날. 자기와 함께하는 그 공간은 나에게 기쁨이고 행복이고 사랑의 공간.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>재즈 in the bar / 재즈 in the 방</h2>
+                    <div class="date">2024년 6월</div>
+                    <div class="memory-slider slider-4">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="재즈 4" class="memory-img"></div>
+                    </div>
+                    <p>재즈를 좋아하는 너에게 재즈를 선물하고 싶었어. 바에서, 방 안에서, 그리고 나랑도 재즈할래~?</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>첫 여행</h2>
+                    <div class="date">2024년 6월</div>
+                    <div class="memory-slider slider-5">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="첫 여행 4" class="memory-img"></div>
+                    </div>
+                    <p>처음부터 끝까지 완벽했던, 행복했던 여행. 그때 먹은 고기와 비빔면, 아침으로 만들어준 행복은 잊을 수 없을거야.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>'사랑스러움' 이라는 단어의 의인화</h2>
+                    <div class="date">2024년 7월</div>
+                    <div class="memory-slider slider-6">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="사랑스러움 4" class="memory-img"></div>
+                    </div>
+                    <p>쳐다보면 웃기 시작하고, 결국 허리를 숙이며 푸히히 웃어버리는 그녀는 사랑스러움 그 자체</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>포항항항~</h2>
+                    <div class="date">2024년 8월</div>
+                    <div class="memory-slider slider-7">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="포항 4" class="memory-img"></div>
+                    </div>
+                    <p>아름다운 숙소에서 아름다운 여인과 있는 남자는 참 복 받은겨 그체?</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>두려움을 극복한 날</h2>
+                    <div class="date">2024년 9월</div>
+                    <div class="memory-slider slider-8">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="두려움 극복 4" class="memory-img"></div>
+                    </div>
+                    <p>사진이 없어서 아쉽지만, 두려운 순간을 함께 극복했던 소중한 순간. 그네는 360도 돌리러 가야하는데, 다음에 다시 도저언~</p>
+                </div>
+            </div>
+            
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>앙큼한 단발</h2>
+                    <div class="date">2024년 10월</div>
+                    <div class="memory-slider slider-9">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="단발 4" class="memory-img"></div>
+                    </div>
+                    <p>갑자기 단발로 잘라오고, 나를 놀라게 했던 그녀~ 내가 좋아하는 단발이 너무 찰떡이고 이뻤어.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>크리스마스</h2>
+                    <div class="date">2024년 12월</div>
+                    <div class="memory-slider slider-10">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="크리스마스 4" class="memory-img"></div>
+                    </div>
+                    <p>즐거운 크리스마스. 크리스마스가 즐거운 게 아니라, 자기와 함께여서 즐겁고 기쁘다. 한땀한땀 떠준 목도리는 나의 보물. 행여나 잃어버릴까 차고 다니는게 두려울 정도야.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>함께 맞이하는 새해</h2>
+                    <div class="date">2025년 1월</div>
+                    <div class="memory-slider slider-11">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새해 4" class="memory-img"></div>
+                    </div>
+                    <p>만다라트를 같이 짜며, 미래를 준비하는 둘의 모습. 내용이 바뀌어도 상관 없어. 계속 같이 바꿔나가며 앞으로를 기대하자.</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content right">
+                    <div class="circle"></div>
+                    <h2>새로운 경험</h2>
+                    <div class="date">2025년 2월</div>
+                    <div class="memory-slider slider-12">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="새로운 경험 4" class="memory-img"></div>
+                    </div>
+                    <p>찜질방 데이트로 떠나는 힐링여행. 아파트에 찍힌 것도 너무 웃기고 재밌었다ㅎㅎㅎㅎ 다음엔 다른 포즈로 찍혀보자~?</p>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="memory-content left">
+                    <div class="circle"></div>
+                    <h2>행복은 시간이 아니라 순간이다</h2>
+                    <div class="date">2025년 3월</div>
+                    <div class="memory-slider slider-13">
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 1" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 2" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 3" class="memory-img"></div>
+                        <div class="memory-slide"><img src="/api/placeholder/400/320" alt="행복한 순간 4" class="memory-img"></div>
+                    </div>
+                    <p>자기와의 30분, 1시간, 7시간, 24시간 모든 순간이 행복이야. 시간이 길어서 라기 보단, 그 순간을 함께하는 것이 기쁘고 행복하네.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-moments">
+            <h2>특별한 순간들</h2>
+            <div class="moments-grid">
+                <div class="moment">
+                    <img src="/api/placeholder/400/320" alt="데이트">
+                    <div class="caption">즐거운 데이트</div>
+                </div>
+                <div class="moment">
+                    <img src="/api/placeholder/400/320" alt="영화관">
+                    <div class="caption">영화관에서</div>
+                </div>
+                <div class="moment">
+                    <img src="/api/placeholder/400/320" alt="생일">
+                    <div class="caption">당신의 생일</div>
+                </div>
+                <div class="moment">
+                    <img src="/api/placeholder/400/320" alt="카페">
+                    <div class="caption">좋아하는 카페</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="love-letter">
+            <h2>소중한 소정이에게</h2>
+            <p>함께하는 1년, 기쁜 일도 싸운 일도 많았지만 결국 함께 지내왔기에 더없이 소중하고 행복한 기억이야.</p>
+            <p>우리의 4계절을 한 번 보냈으니, 이제 봄은 더 화창하게, 여름은 더 뜨겁게, 가을은 더 알록달록하게, 겨울은 더 꼭 붙어있으면서 우리의 4계절을 더욱 아름답게 가꿔가자.</p>
+            <p>너무너무 사랑해❤ 앞으로도 나와 함께해줘 자기야.</p>
+        </div>
+
+        <footer>
+            <h2>앞으로도 함께</h2>
+            <p>우리의 1주년은 시작에 불과해<br>앞으로도 더 많은 추억을 함께 만들어나가자</p>
+            <p>♥</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // 플로팅 하트 생성
+        function createFloatingHearts() {
+            const container = document.getElementById('floating-hearts');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                
+                // 랜덤 위치 및 지연 설정
+                const delay = Math.random() * 10;
+                const initialX = Math.random() * 100;
+                
+                heart.style.left = initialX + 'vw';
+                heart.style.animationDelay = delay + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                heart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // 슬라이더 초기화
+        function initSliders() {
+            for (let i = 1; i <= 13; i++) {
+                $(`.slider-${i}`).slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    adaptiveHeight: true
+                });
+            }
+        }
+        
+        // 페이지 로드 시 실행
+        $(document).ready(function() {
+            createFloatingHearts();
+            initSliders();
+            
+            // 처음 만난 날짜 설정 (2024년 4월 6일 오후 8시)
+            const startDate = new Date(2024, 3, 6, 20, 0, 0);
+            
+            // 카운터 업데이트 함수
+            function updateCounter() {
+                const currentDate = new Date();
+                const diffTime = Math.abs(currentDate - startDate);
+                
+                // 시간 계산
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+                const diffMinutes = Math.floor(diffTime / (1000 * 60));
+                const diffSeconds = Math.floor(diffTime / 1000);
+                
+                // 카운터 업데이트
+                document.getElementById('days-counter').textContent = diffDays;
+                document.getElementById('hours-counter').textContent = diffHours.toLocaleString();
+                document.getElementById('minutes-counter').textContent = diffMinutes.toLocaleString();
+                document.getElementById('seconds-counter').textContent = diffSeconds.toLocaleString();
+            }
+            
+            // 초기 업데이트
+            updateCounter();
+            
+            // 1초마다 카운터 업데이트
+            setInterval(updateCounter, 1000);
+        });
+    </script>
+</body>
+</html>
